@@ -57,17 +57,17 @@ class News_api extends REST_Controller {
      public function index_put($id)
      {
          $input = $this->put();
-    //      $input = array(
-    //         'article_title'=>$this->put('article_title'),
-    //         'content'=>$this->put('content'),
-    //         'category'=>$this->put('category'),
-    //         'postdate'=>$this->put('postdate'),
-    //         'author'=>$this->put('author')
-    //     );
-         var_dump($input); exit;
-         $this->db->update('article', $input, array('article_id'=>$id));
-      
-         $this->response(['Item updated successfully.'], self::HTTP_OK);
+        //  $input = array(
+        //     'article_title'=>$this->put('article_title'),
+        //     'content'=>$this->put('content'),
+        //     'category'=>$this->put('category'),
+        //     'postdate'=>$this->put('postdate'),
+        //     'author'=>$this->put('author')
+        // );
+        // var_dump($input); exit;
+        $r = $this->db->update('article', $input, array('article_id'=>$id));
+        $this->response($r);
+        //  $this->response(['Item updated successfully.'], self::HTTP_OK);
      }
 
     
